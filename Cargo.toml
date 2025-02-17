@@ -34,3 +34,6 @@ indexmap = "2"
 wgpu = { version = "24", features = ["naga-ir"] }
 futures-lite = "1"
 tracing-subscriber = { version = "0.3", features = ["std", "fmt"] }
+
+[patch.crates-io]
+naga = { git = "https://github.com/DouglasDwyer/wgpu", rev = "ea02da92a0a6e00823e75bceee7c945eee851996" }

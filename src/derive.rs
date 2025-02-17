@@ -401,12 +401,18 @@ impl<'a> DerivedModule<'a> {
                                 acceleration_structure: map_expr!(acceleration_structure),
                                 descriptor: map_expr!(descriptor),
                             },
+                            naga::RayQueryFunction::GenerateIntersection { hit_t } => {
+                                naga::RayQueryFunction::GenerateIntersection {
+                                    hit_t: map_expr!(hit_t)
+                                }
+                            },
                             naga::RayQueryFunction::Proceed { result } => {
                                 naga::RayQueryFunction::Proceed {
                                     result: map_expr!(result),
                                 }
                             }
                             naga::RayQueryFunction::Terminate => naga::RayQueryFunction::Terminate,
+                            naga::RayQueryFunction::ConfirmIntersection => naga::RayQueryFunction::ConfirmIntersection,
                         },
                     },
                     Statement::SubgroupBallot { result, predicate } => Statement::SubgroupBallot {
